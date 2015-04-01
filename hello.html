@@ -1,0 +1,63 @@
+<!--
+/*
+ *
+ * Copyright 
+ */
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+
+  <title>hello.js Quickstart (web app) </title>
+
+  <!-- JavaScript specific to this application that is not related to API
+     calls -->
+  <script src="js/vendor/jquery-1.10.2.min.js" ></script>
+  <script src="js/vendor/hello.min.js" ></script>
+  <script src="js/local.js" ></script>
+
+</head>
+
+<body>
+
+  <script type="text/javascript"> var app = new localVars(); </script>
+
+  <div id="tokenDebugArea" >
+    <textarea id="holdingTank" rows="10" cols="100"></textarea>
+    <br></br>
+    <button id="localStorageBtn" >clear localstorage?</button>
+    <br></br>
+  </div>
+
+  <button id="loginBtn" >google hello().login(): get token</button>
+  <button id="tokenBtn" >check current token</button>
+  <button id="disconnectBtn" >hello().logout(): disconnect</button>
+
+
+<script>
+
+initHelloJS();
+
+$(document).ready(function() {
+
+  if (app.debug) {
+    $('tokenDebugArea').show();
+    showLocalStorage();
+  }
+  else {
+    $('tokenDebugArea').hide();
+  }
+
+  $('#localStorageBtn').click(clearLocalStorage);
+  $('#loginBtn').click(connectUser);
+  $('#tokenBtn').click(checkCurrentToken);
+  $('#disconnectBtn').click(disconnectUser);
+
+
+});
+
+</script>
+
+</body>
+</html>
