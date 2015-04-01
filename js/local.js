@@ -2,7 +2,7 @@
  * local.js
  *
  * Cord Phelps
- * Copyright 2014, MIT License
+ * Copyright 2015, MIT License
  * http://www.opensource.org/licenses/MIT
  *
  * Software distributed under the License is distributed on an "AS IS" BASIS,
