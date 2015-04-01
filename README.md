@@ -1,7 +1,7 @@
 ---
 ---
 
-[![screen shot](https://github.com/tokenCheck/master/screenShot.png)]()
+[![screen shot](https://github.com/tokenCheck/raw/master/screenShot.png)]()
 
 
 ## this is a basic, token checking sandbox for the awesome API interface [hello.js](http://adodson.com/hello.js/). 
