@@ -206,21 +206,31 @@ function initHelloJS () {
   		//
   		// 
 
-  	if (typeof auth != 'undefined') {
+if (typeof auth != 'undefined') {
 
-    	$('#loginBtn').text("hello.on('auth.login'): found token");
-    	console.log("\nauth.login event callback, found token:\n" + JSON.stringify(auth) + "\n");
+      $('#loginBtn').text("hello.on('auth.login'): found token");
+      console.log("\nauth.login event callback, found token:\n" + JSON.stringify(auth) + "\n");
 
-    	app.network = auth.network;
+      //console.log("\nauthResponse:\n" + JSON.stringify(auth.authResponse) + "\n");
 
-    	showLocalStorage();
+      var authResponse = JSON.stringify(auth.authResponse);
+      var authResponseObj = JSON.parse(authResponse);
 
-    	app.token = auth.authResponse.access_token;
-    	app.tokenExpires = auth.authResponse.expires;
+      //console.log("\nauthResponse:\n" + authResponse + "\n");
+      //console.log("\n.token:\n" + authResponseObj.access_token + "\n");
 
-    	checkToken(app.token);
+      app.network = auth.network;
 
-  	}
+      showLocalStorage();
+
+      app.token = authResponseObj.access_token;
+      app.tokenExpires = authResponseObj.expires;
+
+      $('#activeTokenBox').text(app.token);
+
+      checkToken(app.token);
+
+    }
 
   	else {
     	$('#loginBtn').text("hello.on('auth.login'): no token");
